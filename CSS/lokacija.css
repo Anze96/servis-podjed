@@ -1,0 +1,63 @@
+﻿div.container_lokacija {
+	display: flex;
+	justify-content: center;	/* za horizontalno poravnavo */
+	margin: 10px 0px 90px 0px;
+}
+
+
+div.container_lokacija div.container_google_map {		
+	width: 600px;
+	min-width: 600px;
+	height: 500px;
+	padding: 20px 30px;
+	margin: 0px;
+}
+
+
+div.container_lokacija div.container_google_map div.google_map {	
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+
+
+
+div.container_lokacija div.crta {	
+	margin: 0px 0px 0px 50px;
+	border-left: 1px solid #bbb;
+}
+
+
+div.container_lokacija div.crta section.napis_in_podatki {
+	margin-left: 50px;
+}
+
+
+div.container_lokacija div.crta section.napis_in_podatki div.table_podatki {
+	display: table;
+	padding: 20px 30px 20px 23px;
+	text-align: left;
+	min-width: 206px;
+}
+
+
+div.container_lokacija div.crta section.napis_in_podatki div.table_podatki div.table_cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+div.container_lokacija div.crta section.napis_in_podatki div.table_podatki div.table_cell p {
+	margin: 0px;	
+	font-size: 0.84em;
+}
+
+
+div.container_lokacija div.crta section.napis_in_podatki div.table_podatki div.table_cell img {
+	padding-right: 20px;
+	width: 25px;
+}

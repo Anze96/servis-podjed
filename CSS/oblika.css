@@ -1,0 +1,319 @@
+﻿html, body {
+	/* more bit da se lohka holder pol scail-a iz tem - to je bl k ne sam v primeru če je vsebine na eni strani mn kokr je zaslon velk da potem 
+	footer ne skoč do zadnega elementa k obstaja na strani */
+	height: 100%;
+}
+
+
+body {		
+	font-size: 100%;
+	margin: 0px;   /* zato da ni prostora okol in okol in da je vse do roba ekrana */
+	font-family: Montserrat, sans-serif;
+	text-align: center;
+}
+
+	
+div.holder {
+	/* to dvoje more bit za footer da ostane skos spodi na zaslonu */
+	position: relative;
+	min-height: 100%;	
+}
+
+
+
+
+
+
+
+
+header {
+	background-color: #9cd45e;
+}
+
+
+header div.table_logo {
+	padding: 15px 0px;
+	display: table;
+}
+
+
+header div.table-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+header div.table-cell:first-child img {
+	width: 500px;
+}
+
+
+header div.table-cell:last-child img {
+	padding-left: 40px;
+	width: 130px;
+}
+
+
+header nav.meni {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: #7cb43e;
+	min-width: 680px;
+
+	-webkit-user-select: none;	/* da ne obarva modr ozadje če hitr klikaš na gumba za naprej pa nazaj */
+}
+
+
+header nav.meni a {
+	position: relative;		
+	
+	margin-right: 35px;
+	margin-left: 35px;
+	padding: 15px 10px;
+
+	background-color: #7cb43e;
+	font-family: Montserrat, sans-serif;
+	font-size: 0.94em;
+	font-weight: bold;
+	letter-spacing: 0.02em;
+	text-decoration: none;
+	color: #000;
+	opacity: 0.4;
+}
+
+
+header nav.meni a:hover {
+	color: #05285a;
+	opacity: 1;
+}
+
+
+header nav.meni a:visited {
+	text-decoration: none;
+}
+
+
+header nav.meni a::after {
+	position: absolute;
+	width: 100%;
+	margin-left: 1px;	/* da se črta premake mal bl desno ker tko kr ni čist poravnana iz tekstom nad njo zarad enga razloga */
+	height: 3px;	/* širina črte */
+	bottom: 0px;	/* kok spodi je črta */
+	left: 0;	/* da se drži levga roba */
+	background-color: #05285a;	
+	content: "";	/* content more bit pri uporabi ::after in ::before pseudo elementov */
+	visibility: hidden;	/* je za vsak slučaj če browser ne podpera CSS tok dobr, da še vseen skrije črto */
+	transform: scaleX(0);	/* 0 - 0% dolžina črte, 1 - 100% dolžina črte, 1.5 - 150% dolžina črte */
+	transition: all 0.2s ease-in-out 0s;
+	opacity: 1;
+}
+	
+
+header nav.meni a:hover::after {
+	visibility: visible;
+	transform: scaleX(0.85);
+	color: #05285a;
+	opacity: 1;
+}
+
+
+header nav.meni a.active {
+	color: #05285a;
+	opacity: 1;
+}
+
+
+header nav.meni a.active::after {
+	height: 3px;	/* širina črte */
+	bottom: 0px;	/* kje je črta */	
+	background-color: #05285a;
+	margin-left: 1px;	/* da se črta premake mal bl desno ker tko kr ni čist poravnana iz tekstom nad njo zarad enga razloga */
+	
+	visibility: visible;
+	transform: scaleX(0.85);
+	opacity: 1;
+}
+
+
+/* header div.meni a.active:first-child::after {} */
+
+
+
+
+
+
+
+
+main {
+	padding-bottom: 210px;   /* more bit tolk kokr je footer velk zato da footer ne gre čez obrazc k se zoomera AL pa če nerabš scrolat dol da pridš do footerja */
+	background: linear-gradient(#f2f2f2, #dcdcdc);
+	/* background-image: url(../Images/slika.jpg);
+    background-size: cover;
+    background-attachment: fixed; */
+}
+
+
+
+
+
+
+
+
+footer {
+	background-color: #9cd45e;
+	font-family: Montserrat, sans-serif;
+	font-size: 0.84em;
+	line-height: 22px;	
+
+	
+	height: 210px;	 /* tolk je TRENUTN footer velk, seštet skupi iz paddingi pa tekstom vse skp */
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+
+footer div.container_podatki {
+	display: flex;	/* da lohka height uporabm in bo še zmer pozincioniral na sredino, ker drugač bi blo gor */
+	align-items: center;
+	
+	height: 160px;
+	background-color: #9cd45e;	
+	text-align: left;
+}
+
+
+footer div.container_podatki table.podatki a {
+	text-decoration: none;
+}
+
+
+footer div.container_podatki table.podatki tr td img {
+	width: 40px;
+}
+
+
+footer div.container_podatki table.podatki tr td.text_v_tabeli {
+	min-width: 170px;
+	text-align: left;
+	padding-left: 15px;
+	padding-bottom: 3px;
+	line-height: 20px;
+}
+
+
+footer div.container_podatki table.podatki tr td.razmik_leva_stran_tabele {
+	padding-right: 40px;
+}
+
+
+footer div.container_podatki table.podatki tr td.razmik_desna_stran_tabele {
+	padding-right: 10px;
+}
+
+
+footer div.container_podatki table.podatki td.delavnik_dan {
+	padding-left: 15px;
+	line-height: 20px;
+	padding-bottom: 3px;
+	width: 75px;
+}
+
+
+footer div.container_podatki table.podatki td.delavnik_ure {
+	min-width: 90px;
+	line-height: 20px;
+	padding-bottom: 3px;
+}
+
+
+footer div.container_podatki table.podatki tr td.prostor_v_tabeli {
+	padding-bottom: 27px;
+}
+
+
+footer div.pravice p {
+	margin: 0px;
+	padding-top: 18px;
+	padding-bottom: 10px;
+	background-color: #7cb43e;
+}
+
+
+
+
+
+
+
+
+table, div, img {
+	margin: auto;	/* da je vse na sredini */
+}
+
+
+table, td {
+	border-spacing: 0;
+	border: 0px solid black;
+}
+
+
+h1, strong {
+	color: #333;
+	font-family: Montserrat, sans-serif;
+}
+
+
+h1 {
+	font-size: 2.4em ;
+}
+
+
+strong {
+	font-size: 1.2em;
+}
+
+
+ul, ol, div.o_meni div {
+	text-align: initial;	/* da je poravnana spet nazaj na levo */
+}
+
+
+ul {
+	list-style-image: url(../Images/bunkica.png);
+}
+
+
+a {
+	color: #000;
+}
+
+
+p {
+	margin: 0px;
+}
+
+
+.obroba {
+	background-color: #fff;
+	border: 1px solid #bbb;
+	border-radius: 2px;	  /* da so robovi zaobleni */
+}
+
+
+/* za strani: lokacija, kontakt in delavnik */
+section.napis_strani {
+	padding: 10px 0px;
+}
+
+
+section.napis_strani h1 {
+	margin-bottom: 5px;
+}
+
+
+/* za strani: lokacija in kontakt */
+p.napis {
+	text-align: left;
+	margin-bottom: 16px;
+}

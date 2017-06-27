@@ -1,0 +1,38 @@
+﻿html {
+	overflow-y: scroll;
+}
+
+
+table.delavnik {
+	font-size: 0.84em;
+	line-height: 22px;
+	
+	padding: 20px 30px;
+	margin: 10px auto 90px auto;	/* da k se pozoma da se šele pr tok px pojav scrool bar na desni */
+}
+
+
+table.delavnik td.slika {
+	padding-right: 50px;
+}
+
+
+table.delavnik td.slika img {
+	width: 140px;
+}
+
+
+table.delavnik td.delavnik_dan {
+	min-width: 235px;
+	text-align: left;
+}
+
+
+table.delavnik td.delavnik_dan span.pike {
+	color: #bbb;
+}
+
+
+table.delavnik td.delavnik_ure {
+	min-width: 84px;
+}

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>	
+	<head>
+		<link rel="icon" href="./Images/logo_slika_zavihek.png">
+		<title>SERVIS PODJED - Servis gospodinjskih aparatov</title>
+		
+		<meta content="text/html; charset=ISO-8859-2" http-equiv="content-type">
+		<meta name="format-detection" content="telephone=no">
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+		<link type="text/css" rel="stylesheet" media="all" href="./CSS/oblika.css">
+		<link type="text/css" rel="stylesheet" media="all" href="./CSS/kontakt.css">
+		
+		<script type="text/javascript" src="./JavaScript/Kontakt/validator.js"></script>
+	</head>
+
+	
+	
+	<body>	
+		<div class="holder">
+			<header>
+				<div class="table_logo">
+					<div class="table-cell">
+						<a href="./Index.html"><img src="./Images/logo_napis.png" alt="slika logo napisa v katerem piše: SERVIS PODJED - servis gospodinjskih aparatov" longdesc="slika logo napisa v katerem piše: SERVIS PODJED - servis gospodinjskih aparatov"></a>
+					</div>
+					<div class="table-cell">
+						<img class="logo_slika" src="./Images/logo_slika.png" alt="Slika logota z pokvarjenim pralnim strojem, ki mu je odtekla voda in bolanim hladilnikom" longdesc="Slika logota z pokvarjenim pralnim strojem, ki mu je odtekla voda in bolanim hladilnikom">
+					</div>
+				</div>
+
+				
+				<nav class="meni">
+					<a href="./Index.html">DOMOV</a>
+					<a href="./Lokacija.html">LOKACIJA</a>
+					<a class="active" href="./Kontakt.html">KONTAKT</a>
+					<a href="./Delavnik.html">DELAVNIK</a>
+				</nav>
+			</header>
+			
+			
+			<main>
+				<section class="napis_strani">
+					<h1>KONTAKT</h1>
+				</section>
+				
+				
+				<div class="container_kontakt" id="container">
+					<div class="container_napis_in_obrazec">
+						<p class="napis">Pošljite mi sporočilo</p>					
+						<div class="kontakt_obrazec obroba" id="kontakt">
+							<form name="form" action="./PHP/contact-form-handler.php" method="POST">
+								<div class="inputi">
+									<div>
+										<label for="ime">Vaše ime <span class="obvezno">(obvezno)</span></label>
+									</div>
+									<input id="ime" name="ime" type="text" placeholder="Ime..">
+									<div id="izpis1"></div><br>
+									
+									
+									<div>
+										<label for="email">Vaš elektronski naslov <span class="obvezno">(obvezno)</span></label>
+									</div>
+									<input id="email" name="email" type="text" placeholder="E-pošta..">
+									<div id="izpis2"></div><br>
+									
+									
+									<div>
+										<label for="telefon">Vaša telefonska številka</label>
+									</div>
+									<input id="telefon" name="telefon" type="text" placeholder="Telefon..">
+									<div id="izpis3"></div><br>
+									
+									
+									<div>
+										<label for="sporocilo">Vaše sporočilo/vprašanje <span class="obvezno">(obvezno)</span></label>
+									</div>
+									<textarea id="sporocilo" name="sporocilo" spellcheck="false"></textarea>
+									<div id="izpis4"></div><br>
+								</div>
+								<div class="gumba">					
+									<input type="submit" value="POŠLJI" onclick="return validator()">	<!--more bit return da dobi vrednost false iz skripte-->
+									<input class="izbriši" type="reset" value="IZBRIŠI">
+								</div>
+							</form>
+						</div>
+					</div>
+						
+						
+					<div class="crta">
+						<section class="napis_in_podatki">
+							<p class="napis">Kontaktni podatki</p>					
+							<div class="kontakt_podatki obroba">
+								<p>Podjed Marjan</p>
+								<p><img src="./Images/Kontakt/telefon.png" alt="Telefon" longdesc="Slika telefona"><a href="tel:041680605">041 680 605</a></p>
+								<p>E-mail naslov</p>
+								<p><img src="./Images/Kontakt/email.png" alt="Elektronski naslov" longdesc="Slika pisma, ki predstavlja elektronsko pošto"><a href="mailto:servis.podjed@gmail.com">servis.podjed@gmail.com</a></p>
+							</div>
+						</section>
+					</div>	
+				</div>
+			</main>
+
+
+			<footer>
+				<div class="container_podatki">
+					<table class="podatki">
+						<tr>
+							<td>
+								<a href="tel:041680605"><img src="./Images/Podatki/telefon.png" alt="Telefon" longdesc="Slika telefona"></a>
+							</td>
+							<td class="text_v_tabeli razmik_leva_stran_tabele">
+								<a href="tel:041680605" class="telefon">041 680 605 (Marjan)</a>
+							</td>
+							
+							
+							<td>
+								<a href="mailto:servis.podjed@gmail.com"><img src="./Images/Podatki/email.png" alt="Elektronski naslov" longdesc="Slika pisma, ki predstavlja elektronsko pošto"></a>
+							</td>
+							<td class="text_v_tabeli razmik_desna_stran_tabele" colspan="2">	<!more bit colspan 2 zato ker sta nad nemu 2 stolpca>
+								<a href="mailto:servis.podjed@gmail.com">servis.podjed@gmail.com</a>
+							</td>
+						</tr>
+						
+						
+						<tr><td class="prostor_v_tabeli"></td></tr>
+
+					
+						<tr>
+							<td>
+								<img class="slika_lokacija" src="./Images/Podatki/lokacija.png" alt="GPS marker" longdesc="Slika GPS markerja">
+							</td>
+							<td class="text_v_tabeli razmik_leva_stran_tabele">
+								<p>Goričica pod Krimom 31,</p>
+								<p>1352 Preserje</p>
+							</td>
+							
+							
+							<td>
+								<img src="./Images/Podatki/ura.png" alt="Odpiralni čas" longdesc="Slika ure">
+							</td>
+							<td class="delavnik_dan razmik_desna_stran_tabele">
+								<p>pon-pet:</p>
+								<p>sobota:</p>
+							</td>
+							<td class="delavnik_ure">
+								<p>7:00 - 19:00</p>
+								<p>po dogovoru</p>
+							</td>						
+						</tr>
+					</table>
+				</div>
+				
+				
+				<div class="pravice">				
+					<p>&copy; 2017 Anže. Nekaj pravic pridržanih.</p>						
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

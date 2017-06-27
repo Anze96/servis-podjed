@@ -1,0 +1,77 @@
+﻿section.servis_napis {
+	padding: 35px 0px 45px;
+	min-width: 600px;
+}
+
+
+section.servis_napis h1 {
+	margin-bottom: 30px;
+	font-size: 2em;
+}
+
+
+section.servis_napis p {
+	font-size: 0.9em;
+}
+
+
+section.servis_napis p span.km {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #7cb43e;
+}
+
+
+
+
+
+
+
+
+div.container_o_meni_in_dela {	
+	font-size: 0.84em;
+	line-height: 24px;
+	
+	width: 600px;
+	padding: 50px;
+	padding-top: 20px;
+	
+	margin-bottom: 80px;   /* more bit zato da je lohka mal sivga ozadja predn se FOOTER začne */
+}
+
+
+div.container_o_meni_in_dela section.o_meni {
+	text-align: left;
+	padding-bottom: 20px;
+}
+
+
+div.container_o_meni_in_dela section.o_meni h1.naslov {
+	font-size: 1.8em ;	/* tok je normalna velikost h1 */
+}
+
+
+div.container_o_meni_in_dela section.o_meni p {
+
+}
+
+
+div.container_o_meni_in_dela div.dela p {
+	text-align: left;
+}
+
+
+div.container_o_meni_in_dela div.dela p:first-child {
+	margin-top: 15px;
+}
+
+
+div.container_o_meni_in_dela div.dela ul {
+	padding-left: 40px;
+	margin: 0px;
+}
+
+
+div.container_o_meni_in_dela div.dela ul:last-child {
+	margin-bottom: 15px;
+}

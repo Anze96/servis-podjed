@@ -1,0 +1,154 @@
+﻿div.container_kontakt {
+	display: flex;
+	justify-content: center;	/* za horizontalno poravnavo */
+	margin: 10px 0px 90px 0px;
+}
+
+
+div.container_kontakt div.container_napis_in_obrazec {
+	margin: 0px;	/* pr flexbox-ih more bit neka vrednost margin-a zato da nebojo elementi narazn drug od druzga */
+}
+
+
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec {	
+	font-size: 0.84em;
+	text-align: left;
+	font-weight: bold;
+	color: #333;
+	
+	width: 430px;
+	padding: 20px 30px;
+}	
+
+
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec div.inputi input, textarea {
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	
+	width: 300px;
+	height: 30px;
+	padding: 1px 1px 1px 10px;	/* zato ker se pol pr :focus poveča border za 1px pa padding da na 0px */
+	margin-top: 10px;	
+}
+
+
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec div.inputi textarea {
+	width: 408px;	/* ker 4px uzame za robove, 20px pa za padding-left pa right k omejuje tekst od kje pa do kje se loh piše */
+	height: 120px;
+	padding: 10px;	
+	resize: vertical;
+}
+
+
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec div.inputi input:focus, textarea:focus {
+	border: 2px solid #9cd45e;
+	padding: 0px 1px 0px 9px;	/* zato ker se rob poveča za 1px se more dat 1px mn paddinga da se ne premakne vse skupi */ 
+}
+
+
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec div.inputi textarea:focus {
+	padding: 9px 9px 9px 10px;	/* zato ker se rob poveča za 1px se more dat 1px mn paddinga da se ne premakne vse skupi */
+}
+
+
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec div.inputi span.obvezno {
+	color: #000;
+	font-weight: initial;
+}
+
+
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec div.gumba {
+	-webkit-user-select: none;	/* da ne obarva modr ozadje če hitr klikaš na gumba za naprej pa nazaj */
+}
+
+
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec div.gumba input {
+	border: 0px solid;   /* More bit PR VSH INPUT-ih ČE SE HOČMO ZNEBIT OBROB, zato da niso ene druge čudne obrobe */
+	border-radius: 4px;
+	background-color: #9cd45e;
+	
+	width: 80px;
+	height: 35px;
+	margin-right: 15px;	  /* da je gumb IZBRIŠI mal bl desno */
+	
+	cursor: pointer;
+	-webkit-user-select: none;
+}
+
+	
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec div.gumba input:hover {
+	background-color: #7cb43e;
+}
+
+
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec div.gumba input.izbriši {
+	border: 2px solid #9cd45e;
+	background-color: #fff;	
+}
+
+
+div.container_kontakt div.container_napis_in_obrazec div.kontakt_obrazec div.gumba input.izbriši:hover {
+	border-color: #7cb43e;	
+}
+
+
+
+
+
+
+
+
+div.container_kontakt div.crta {	
+	margin: 0px 0px 0px 50px;
+	border-left: 1px solid #bbb;
+}
+
+
+div.container_kontakt div.crta section.napis_in_podatki {
+	margin-left: 50px;
+}
+
+
+div.container_kontakt div.crta div.kontakt_podatki {
+	padding: 20px 30px;
+}
+
+
+div.container_kontakt div.crta div.kontakt_podatki p {
+	font-size: 0.75em;
+	text-align: left;
+	min-width: 233px;
+	
+	margin-bottom: 5px;
+}
+
+
+div.container_kontakt div.crta div.kontakt_podatki p:nth-child(2) {
+	font-size: 0.95em;	
+	margin-bottom: 30px;
+}
+
+
+div.container_kontakt div.crta div.kontakt_podatki p:nth-child(4) {
+	font-size: 0.95em;
+	margin-bottom: 0px;
+}
+
+
+div.container_kontakt div.crta div.kontakt_podatki p:nth-child(2) img, p:nth-child(4) img {
+	padding-right: 15px;
+	width: 25px;
+	
+	vertical-align: middle;	
+}
+
+
+div.container_kontakt div.crta div.kontakt_podatki p a {
+	text-decoration: none;
+	color: #9cd45e;
+}
+
+
+div.container_kontakt div.crta div.kontakt_podatki p a:hover {
+	color: #7cb43e;
+}
