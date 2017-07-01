@@ -42,7 +42,7 @@ div.containter_slideshow a.prev:hover, a.next:hover {
 
 div.containter_slideshow div.slajd {
     position         : absolute;
-    top              : 33.33px;
+    top              : 0;
     left             : 0;
     right            : 0;
     opacity          : 0;
@@ -54,7 +54,8 @@ div.containter_slideshow .active {
 }
 
 div.containter_slideshow div.slajd img {
-    height    : 333.33px;
+    width     : auto;
+    height    : 400px;
     min-width : 1000px;
     max-width : 100%;
 }
