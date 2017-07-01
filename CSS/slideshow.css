@@ -1,106 +1,159 @@
 div.containter_slideshow {
-	position: relative;
-	width: auto;
-	height: 420px;
-	background-color: #fff;
-	
-	border-style: solid;
-	border-width: 0px 0px 1px 0px;
-	border-color: #bbb;
+    position         : relative;
+    width            : 100%;
+    height           : 420px;
+    background-color : #fff;
+    border-style     : solid;
+    border-width     : 0px 0px 1px 0px;
+    border-color     : #bbb;
 }
-
 
 div.containter_slideshow a.prev, a.next {
-	cursor: pointer;
-	position: absolute;
-	top: 50%;
-	width: auto;
-	margin-top: -19px;	/* da je zamaknn mal bl gor (do polovice višine tega elementa), da je na SREDINI */
-	padding: 10px;	/* kolk je èrnega ozadja okol gumbov */
-	font-weight: bold;
-	font-size: 28px;
-	background-color: #9cd45e;
-	transition:  0.2s ease;
-	color: #fff;
-	opacity: 0.4;
-    -webkit-user-select: none;	/* da ne obarva modr ozadje èe hitr klikaš na gumba za naprej pa nazaj */
+    cursor              : pointer;
+    position            : absolute;
+    top                 : 50%;
+    width               : auto;
+    margin-top          : -19px;	/* da je zamaknn mal bl gor (do polovice višine tega elementa), da je na SREDINI */
+    padding             : 10px;	/* kolk je èrnega ozadja okol gumbov */
+    font-weight         : bold;
+    font-size           : 28px;
+    background-color    : #9cd45e;
+    transition          :  0.2s ease;
+    color               : #fff;
+    opacity             : 0.4;
+    -webkit-user-select : none;	/* da ne obarva modr ozadje èe hitr klikaš na gumba za naprej pa nazaj */
 }
-
 
 div.containter_slideshow a.next {
-	right: 0;
-	border-radius: 3px 0 0 3px;
+    right         : 0;
+    border-radius : 3px 0 0 3px;
 }
-
 
 div.containter_slideshow a.prev {
-	left: 0;
-	border-radius: 0 3px 3px 0;
+    left          : 0;
+    border-radius : 0 3px 3px 0;
 }
-
 
 div.containter_slideshow a.prev:hover, a.next:hover {
-	background-color: #9cd45e;
-	color: #fff;
-	opacity: 1;
+    background-color : #9cd45e;
+    color            : #fff;
+    opacity          : 1;
 }
-
 
 div.containter_slideshow div.slajd {
-	position: relative;	
-	max-width: 100%;	/* da k zoomaš da ne gre slika èez robove ekrana */
-	height: 400px;
-	width: 1000px;
-	min-width: 1000px;
-    display: none;	/* zato da jih ne pokaže vsh naenkrat */
+    position         : absolute;
+    top              : 33.33px;
+    left             : 0;
+    right            : 0;
+    opacity          : 0;
+    background-color : #ffffff;
 }
 
-
-div.containter_slideshow div.slajd  img {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 100%;	/* da vse slike poveèa/pomanjša tko da bojo enak ŠIROKE, kokr je parent div */
+div.containter_slideshow .active {
+    opacity: 1 !important;
 }
 
-
-div.containter_slideshow div.kvadratki {
-	-webkit-user-select: none;	/* da ne obarva modr ozadje èe hitr klikaš na gumba za naprej pa nazaj */
-
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 2%;
+div.containter_slideshow div.slajd img {
+    height    : 333.33px;
+    min-width : 1000px;
+    max-width : 100%;
 }
 
+.kvadratki {
+    position : absolute;
+    top      : 390px;
+    width    : 100%;
+    margin   : 0 auto;
+}
 
 /* NEMORM DAT PRED PIKO IME ELEMENTA KER GA POL NEKI ZJEBE IN SE NEBO OBARVAL, ZJEBE SE PA POMOJE ZATO KER SKRIPTA TEM ELEMENTOM DODAJA SVOJA IMENA */
 .kvadratek {
-	cursor: pointer;
-	height: 8px;
-	width: 35px;
-	margin: 0 6px;
-	background-color: #dcdcdc;
-	border-radius: 1px;
-	display: inline-block;
-	transition: background-color 0.2s ease;
+    cursor           : pointer;
+    height           : 8px;
+    width            : 35px;
+    margin           : 0 6px;
+    background-color : #dcdcdc;
+    border-radius    : 1px;
+    display          : inline-block;
+    transition       : background-color 0.2s ease;
 }
-
 
 .active /* ta ime nardi v skripti */, .kvadratek:hover {
 	background-color: #9cd45e;
 }
 
-
-div.fade {
-	animation-name: fade;
-	animation-duration: 1.5s;
+.slide-forwards-out {
+    animation: slide-forwards-out 0.5s linear;
 }
 
+.slide-forwards-in {
+    animation: slide-forwards-in 0.5s linear;
+}
 
-@keyframes fade {
-	from {opacity: 0.4}
-	to {opacity: 1}
+.slide-backwards-out {
+    animation: slide-backwards-out 0.5s linear;
+}
+
+.slide-backwards-in {
+    animation: slide-backwards-in 0.5s linear;
+}
+
+@keyframes slide-forwards-out {
+    0% {
+        left    : 0;
+        opacity : 1;
+    }
+    50% {
+        left    : -33.33%;
+        opacity : 0.25;
+    }
+    100% {
+        left    : -66.66%;
+        opacity : 0;
+    }
+}
+
+@keyframes slide-forwards-in {
+    0% {
+        left    : 66.66%;
+        opacity : 0;
+    }
+    50% {
+        left    : 33.33%;
+        opacity : 0.75;
+    }
+    100% {
+        left    : 0;
+        opacity : 1;
+    }
+}
+
+@keyframes slide-backwards-out {
+    0% {
+        left    : 0;
+        opacity : 1;
+    }
+    50% {
+        left    : 33.33%;
+        opacity : 0.25;
+    }
+    100% {
+        left    : 66.66%;
+        opacity : 0;
+    }
+}
+
+@keyframes slide-backwards-in {
+    0% {
+        left    : -66.66%;
+        opacity : 0;
+    }
+    50% {
+        left    : -33.33%;
+        opacity : 0.75;
+    }
+    100% {
+        left    : 0;
+        opacity : 1;
+    }
 }

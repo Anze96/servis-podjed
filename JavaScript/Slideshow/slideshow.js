@@ -1,33 +1,80 @@
-var slideIndex = 1;
-showSlides(slideIndex);
+// on page load
+slides = document.getElementsByClassName("slajd");
+dots = document.getElementsByClassName("kvadratek");
+nSlides = slides.length;
 
+SLIDE_INDEX = 0;
+startSlideshow(true);
 
-function plusSlides(n) {	//dobi notr 1 al pa -1
-	showSlides(slideIndex += n);
+// automatic sliding (every 5 seconds)
+function startSlideshow (init) {
+    SLIDESHOW_INTERVAL = 5000;
+
+    INTERVAL_ID = setInterval(function () {
+        nextSlide();
+    }, SLIDESHOW_INTERVAL);
 }
 
-function currentSlide(n) {
-	showSlides(slideIndex = n);
+function stopSlideshow () {
+    clearInterval(INTERVAL_ID);
 }
 
-function showSlides(n) {
-	var i;
-	var slides = document.getElementsByClassName("slajd");
-	var dots = document.getElementsByClassName("kvadratek");
+function mouseenterSlide () {
+    stopSlideshow();
+}
 
-	if (n > slides.length) {slideIndex = 1}	//ko pridemo iz gumbom next do zadnjega slida, da zaène ponovno na prvem, na 1
-	if (n < 1) {slideIndex = slides.length}	//èe gremo pa nazaj iz gumbom prev, pa da pridemo na zaèetek, gre pa potem od konca spet naprej
+function mouseleaveSlide () {
+    startSlideshow(false);
+}
 
-	/* da doloèi prejšnemu slajdu display: none; zato da ga ne prikaže */
-	for (i = 0; i < slides.length; i++) {
-		slides[i].style.display = "none";
-	}
+function nextSlide () {
+    var outgoing = SLIDE_INDEX;
+    SLIDE_INDEX++;
+    SLIDE_INDEX %= nSlides;
+    var incoming = SLIDE_INDEX;
+    var slideDirection = 'slide-forwards';
 
-	/* da zbriše prejšnemu dotu-u " active" napis v imenu class-a */
-	for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" active", "");
-	}
+    transitionSlides(outgoing, incoming, slideDirection);
+}
 
-	slides[slideIndex-1].style.display = "block";	/* more bit -1 ker je to tabela in tabela se zaène pr 0, pa v tem primeru do 3, ker so 4 slajdi */
-	dots[slideIndex-1].className += " active";	/* more bit -1 ker je to tabela in tabela se zaène pr 0, pa v tem primeru do 3, ker so 4 slajdi */
+function previousSlide () {
+    var outgoing = SLIDE_INDEX;
+    SLIDE_INDEX--;
+    SLIDE_INDEX = SLIDE_INDEX < 0 ? nSlides - 1 : SLIDE_INDEX;
+    var incoming = SLIDE_INDEX;
+    var slideDirection = 'slide-backwards';
+
+    transitionSlides(outgoing, incoming, slideDirection);
+}
+
+function setSlide (n) {
+    // no transition if we are already at the chosen slide
+    if (n === SLIDE_INDEX) {
+        return;
+    }
+    var outgoing = SLIDE_INDEX;
+    SLIDE_INDEX = n;
+    var incoming = SLIDE_INDEX;
+    var slideDirection = incoming < outgoing ? 'slide-backwards' : 'slide-forwards';
+
+    transitionSlides(outgoing, incoming, slideDirection);
+}
+
+function transitionSlides (outgoing, incoming, slideDirection) {
+    // reset slide classes
+    slides[outgoing].className = 'slajd'
+    slides[incoming].className = 'slajd'
+
+    // add new slide animation classes
+    slides[outgoing].className += ' ' + slideDirection + '-out';
+    slides[incoming].className += ' ' + slideDirection + '-in';
+
+    // add new slide active class
+    slides[incoming].className += ' active';
+
+    // reset controls class
+    dots[outgoing].className = 'kvadratek';
+
+    // add new controls active class
+    dots[incoming].className += ' active';
 }
